@@ -3,11 +3,13 @@ from django.utils.safestring import mark_safe
 
 register = Library()
 
+
 @register.filter(name='search_field_display')
 def search_field_display(search_field):
     if search_field is not None:
         return search_field.replace('__', ' -> ').replace('_', ' ').title()
     return ''
+
 
 @register.filter(name='generate_query_string')
 def generate_query_string(search_field, change_list_obj):
@@ -19,13 +21,11 @@ def generate_query_string(search_field, change_list_obj):
     params = []
     for param, value in change_list_obj.params.items():
         params.append(f'{param}={value}')
-    
-    params = [f'{param}={value}' for param, value in change_list_obj.params.items()]
-
     if params:
         return '?' + '&'.join(params)
     return ''
     """
+
 
 @register.simple_tag(name='render_search_field')
 def render_search_field(search_field, change_list_obj):

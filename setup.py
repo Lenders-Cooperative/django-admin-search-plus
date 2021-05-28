@@ -2,28 +2,27 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-from setuptools import setup, find_packages
-
-import admin_search_plus
+from setuptools import setup
 
 readme = open("README.md").read()
 
 setup(
     name="admin-search-plus",
-    version=admin_search_plus.__version__,
-    author=admin_search_plus.__author__,
-    description="Mixin for Django's admin objects to enhance searching",
+    version="0.2",
+    author="David Graves",
+    description="Mixin for Django's admin objects to enhance searching by limiting searchable fields",
     long_description=readme,
     long_description_content_type="text/markdown",
     author_email="dgraves@gravitate-us.com",
-    url="https://github.com/Lenders-Cooperative/admin-search-plus",
-    packages=find_packages(),
+    url="https://github.com/Lenders-Cooperative/django-admin-search-plus",
+    download_url="https://github.com/Lenders-Cooperative/django-admin-search-plus/archive/v_02.tar.gz",
+    packages=["admin_search_plus"],
     include_package_data=True,
     install_requires=[
-        "Django>=3.6",
+        "Django>=3.2",
     ],
     keywords="django admin search",
-    license="MIT",
+    license="bsd-3-clause",
     platforms=["any"],
     classifiers=[
         "Environment :: Web Environment",

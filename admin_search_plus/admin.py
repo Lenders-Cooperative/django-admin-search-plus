@@ -1,8 +1,8 @@
 
 
-class AdminSearchPlusMixin(object):
+class AdminSearchPlusMixin:
     """
-    Admin mixin to use with 
+    Admin mixin that limits searches to specified field
     """
     admin_search_plus = True
     show_full_result_count = False
