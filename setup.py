@@ -19,7 +19,7 @@ setup(
     packages=["admin_search_plus"],
     include_package_data=True,
     install_requires=[
-        "Django>=3.2",
+        "Django>=2.2.9",
     ],
     keywords="django admin search",
     license="bsd-3-clause",
